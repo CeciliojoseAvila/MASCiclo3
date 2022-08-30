@@ -10,24 +10,27 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
-//@RestController
+ //@RestController
 @Controller
 public class Controllers {
-
- /*   @GetMapping(value = "/HOLA")
+   /* @GetMapping(value = "/HOLA")
     public String HOLA(){
         return "ESTO SI ES PROGRAMAR EN CICLO 3 DE MISION TIC 2022";
-    }*/ //SUPRIMO ESTE CODIGO PORQUE NECESITAMOS UN NUEVO CONTROLLERS
+    } //SUPRIMO ESTE CODIGO PORQUE NECESITAMOS UN NUEVO CONTROLLERS*/
 
     @Autowired
     EmpresaService empresaService;
-    @GetMapping({"/Empresas", "/verEmpresas"})
+    @GetMapping ({"/VerEmpresas"})
     public String viewEmpresas(Model model){
-        List<Empresa> listaEmpresas=empresaService.getAllEmpresas();
-        model.addAttribute("empList", "listaEmpresas");
 
-        return "verEmpresas";
+        List<Empresa> listaEmpresas=empresaService.getAllEmpresas();
+        model.addAttribute("emplist",listaEmpresas);
+
+        return "VerEmpresas"; //Llamamos al html
 
     }
 
 }
+
+
+
