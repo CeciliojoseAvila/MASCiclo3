@@ -10,7 +10,7 @@ public class MovimientoDinero {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
     private long monto;
-    private String dconcepto;
+    private String concepto;
 
     @ManyToOne
     @JoinColumn(name = "Usuario_id")
@@ -19,9 +19,9 @@ public class MovimientoDinero {
     public MovimientoDinero() {
     }
 
-    public MovimientoDinero(long monto, String dconcepto, Empleado empleado) {
+    public MovimientoDinero(long monto, String concepto, Empleado empleado) {
         this.monto = monto;
-        this.dconcepto = dconcepto;
+        this.concepto = concepto;
         this.usuario = empleado;
     }
 
@@ -41,12 +41,12 @@ public class MovimientoDinero {
         this.monto = monto;
     }
 
-    public String getDconcepto() {
-        return dconcepto;
+    public String getConcepto() {
+        return concepto;
     }
 
-    public void setDconcepto(String dconcepto) {
-        this.dconcepto = dconcepto;
+    public void setConcepto(String concepto) {
+        this.concepto = concepto;
     }
 
     public Empleado getUsuario() {
