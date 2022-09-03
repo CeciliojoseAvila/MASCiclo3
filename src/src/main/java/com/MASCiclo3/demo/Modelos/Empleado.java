@@ -5,8 +5,8 @@ import javax.persistence.*;
 
 @Entity
 @Table(name ="Empleado")
-public class Empleado {
 
+public class Empleado {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
