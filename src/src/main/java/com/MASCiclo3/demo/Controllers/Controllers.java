@@ -1,13 +1,17 @@
 package com.MASCiclo3.demo.Controllers;
 
+import com.MASCiclo3.demo.Modelos.Empleado;
 import com.MASCiclo3.demo.Modelos.Empresa;
 import com.MASCiclo3.demo.Service.EmpresaService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import java.util.ArrayList;
 import java.util.List;
 
  //@RestControlleresto iba en public class controllers
@@ -28,7 +32,7 @@ public class Controllers{
          return "verEmpresas"; //Llamamos al HTML
      }
 
-     @GetMapping("/agregarEmpresa")
+     @GetMapping("/AgregarEmpresa")
      public String nuevaEmpresa(Model model, @ModelAttribute("mensaje") String mensaje){
          Empresa emp= new Empresa();
          model.addAttribute("emp",emp);
@@ -76,9 +80,14 @@ public class Controllers{
          redirectAttributes.addFlashAttribute("mensaje", "deleteError");
          return "redirect:/verEmpresas";
      }
+     // @GetMapping("/enterprises/{Id}/empleados")//
+    //public ArrayList<Empleado> EmpleadoPorEmpresa(@PathVariable("Id") Integer Id){
+      //   return ;
+     }
 
 
- }
+
+
 
 
 
